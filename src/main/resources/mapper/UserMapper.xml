@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xyz.mapper.UserMapper">
+          <resultMap id="RM-UserDO" type="UserDO">
+	          	<result property="account" column="account"/>
+	          	<result property="password" column="password"/>
+	          	<result property="username" column="username"/>
+	          	<result property="role" column="role"/>
+	          	<result property="gmtCreate" column="gmt_create"/>
+	          	<result property="gmtModified" column="gmt_modified"/>
+          </resultMap>
+          
+         <insert id="insertUser">
+             insert into test_user(
+             account,username,password,role,gmt_create,gmt_modified)
+             values(
+             #{account},#{username},#{password},#{role},now(),now())
+         </insert>
+         
+         <delete id="deleteUserByAccount">
+         	<![CDATA[
+         	delete from test_user where account = #{account}
+         	]]>
+         </delete>
+         
+         <update id="updateUser">
+         	update test_user
+         	<set>
+         		<if test="password!=null">
+         			password=#{password},
+         		</if>
+         		<if test="username!=null">
+         			username=#{username},
+         		</if>
+         		<if test="role!=null">
+         			role=#{role.status},
+         		</if>
+         		   gmt_modified=now()
+         	</set>
+         	where account=#{account}
+         </update>
+         
+         <sql id="select-param-column">
+         	account,username,password,role,gmt_create,gmt_modified
+         </sql>
+         <sql id="page-limit">
+         	limit #{offset},#{limit}
+         </sql>
+         
+         <select id="getUserByAccount" resultMap="RM-UserDO">
+         	select
+         	<include refid="select-param-column"/>
+         	from test_user where account=#{account}
+         </select>
+         
+         <select id="countQuery" resultType="int">
+         	select count(*) from test_user
+         	<where>
+         		<if test="account!=null">
+         			account=#{account}
+         		</if>
+         		<if test="username!=null">
+         			and username=#{username}
+         		</if>
+         		<if test="role!=null">
+         			and role=#{role.status}
+         		</if>
+         	</where>
+         </select>
+         
+         
+         
+         
+</mapper>
