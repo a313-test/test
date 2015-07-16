@@ -11,8 +11,7 @@ public enum ErrorEnum {
 	USER_EXISES(7,"用户已经存在"),
 	USER_NOE_EXISES(8,"用户不存在"),
 	USER_ROLE_NOTVALID(9,"用户角色违法"),
-	USER_PASSWORD_ERROR(10,"用户密码错误"),
-	USER_ROLE_ERROR(10,"用户角色错误");
+	USER_VALID_FAILED(10,"用户验证失败");
 	
     private int msgCode;
     private String msgInfo;

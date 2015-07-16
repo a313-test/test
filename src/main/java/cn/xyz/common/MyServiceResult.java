@@ -3,8 +3,8 @@ package cn.xyz.common;
 import java.io.Serializable;
 /**
  * 这是一个定义service层返回值类型的工具类
- * 如果能够执行目标sql，无论sql成功或执行失败，都使用successResult
- * 如果不能够目标sql，使用failedResult
+ * isSuccess为true，表示执行成功，成功的数据在model中，此时errorEnum没有意义
+ * isSuccess为false，表示执行失败，失败的数据的errorEnum中，此时model没有意义
  * @author xuyizhen
  *
  * @param <T>

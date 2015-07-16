@@ -109,9 +109,9 @@ public MyServiceResult<UserDO> verifyAndGetUser(String account,String password,R
 	if(userDO==null)
 		  return MyServiceResult.failedResult(ErrorEnum.USER_NOE_EXISES);
 	if(!userDO.getPassword().equals(password))
-		return MyServiceResult.failedResult(ErrorEnum.USER_PASSWORD_ERROR);
+		return MyServiceResult.failedResult(ErrorEnum.USER_VALID_FAILED);
 	if(userDO.getRole()!=roleEnum.getStatus())
-		return MyServiceResult.failedResult(ErrorEnum.USER_ROLE_ERROR);
+		return MyServiceResult.failedResult(ErrorEnum.USER_VALID_FAILED);
 	return MyServiceResult.successResult(userDO);
 }
 }
