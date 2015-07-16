@@ -19,7 +19,7 @@
  
         
         <bean id="baseMapper"  class="org.mybatis.spring.mapper.MapperFactoryBean" abstract="true">
-        	<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        	<property name="sqlSessionFactory" ref="mySqlSessionFactory"/>
         </bean>
         
         <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" parent="baseMapper">
