@@ -2,7 +2,9 @@ package cn.xyz.common;
 
 public enum RoleEnum {
 	BOSS(1,"老板"),
-	EMPLOYEE(2,"员工");
+	SELL(2,"sell"),
+	EMPLOYEE(3,"employee");
+	
 	private int status;
 	private String desc;
 	
@@ -26,6 +28,14 @@ public enum RoleEnum {
 				return roleEnum;
 		}
 		return null;
+	}
+	
+	public static boolean isValid(RoleEnum role){
+		for(RoleEnum roleEnum:RoleEnum.values()){
+			if(roleEnum.getStatus()==role.status)
+				return true;
+		}
+		return false;
 	}
 	
 }

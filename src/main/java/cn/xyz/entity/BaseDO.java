@@ -30,7 +30,7 @@ public class BaseDO {
 	 * 显示当前对象的具体信息
 	 */
 	public String toString(){
-		return ToStringBuilder.reflectionToString(this,ToStringStyle.MULTI_LINE_STYLE);
+		return ToStringBuilder.reflectionToString(this,ToStringStyle.DEFAULT_STYLE);
 	}
 	
 

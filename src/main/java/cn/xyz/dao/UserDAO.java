@@ -67,7 +67,7 @@ public class UserDAO {
 			  return new ArrayList<UserDO>();
 		  return this.userMapper.query(queryUserCondition);
 	  }
-	  public UserDO getUserByCount(String account){
+	  public UserDO getUserByAccount(String account){
 		  if(account==null)
 			  return null;
 		  return this.userMapper.getUserByAccount(account);
