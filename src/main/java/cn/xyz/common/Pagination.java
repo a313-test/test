@@ -7,7 +7,9 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * 分页工具类
+ * 这是一个分页工具类，用于向上层说明关于分页的信息
+ * 包括分页的总记录数，分页的大小，总页数以及当前页
+ * 当然，还包括最重要的页的内容，在list集合中存放
  * 
  * 
  * @author luojie 2014年10月22日 下午8:39:44

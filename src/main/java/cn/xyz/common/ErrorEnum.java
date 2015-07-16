@@ -9,8 +9,8 @@ public enum ErrorEnum {
 	USER_ROLE_NULL(5,"用户角色为空"),
 	DO_SQL_FAILED(6,"sql语句执行失败"),
 	USER_EXISES(7,"用户已经存在"),
-	USER_NOE_EXISES(8,"用户no存在"),
-	USER_ROLE_NOTVALID(9,"用户角色notvalid"),
+	USER_NOE_EXISES(8,"用户不存在"),
+	USER_ROLE_NOTVALID(9,"用户角色违法"),
 	USER_PASSWORD_ERROR(10,"用户密码错误"),
 	USER_ROLE_ERROR(10,"用户角色错误");
 	
