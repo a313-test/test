@@ -8,7 +8,7 @@ package cn.xyz.common;
 public class QueryUserCondition {
    private String account;
    private String username;
-   private RoleEnum role;
+   private RoleEnum roleEnum;
    private int offset=0;
    private int limit=10;
 public String getAccount() {
@@ -23,11 +23,11 @@ public String getUsername() {
 public void setUsername(String username) {
 	this.username = username;
 }
-public RoleEnum getRole() {
-	return role;
+public RoleEnum getRoleEnum() {
+	return roleEnum;
 }
-public void setRole(RoleEnum role) {
-	this.role = role;
+public void setRoleEnum(RoleEnum roleEnum) {
+	this.roleEnum = roleEnum;
 }
 public int getOffset() {
 	return offset;

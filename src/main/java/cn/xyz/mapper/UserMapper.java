@@ -14,7 +14,7 @@ public interface UserMapper {
 	 * @param userDO
 	 * @return
 	 */
-   int crearteUser(UserDO userDO);
+   int createUser(UserDO userDO);
    /**
     * 根据account删除用户
     * @param account

@@ -12,7 +12,7 @@
 	          	<result property="gmtModified" column="gmt_modified"/>
           </resultMap>
           
-         <insert id="insertUser">
+         <insert id="createUser">
              insert into test_user(
              account,username,password,role,gmt_create,gmt_modified)
              values(
@@ -34,8 +34,8 @@
          		<if test="username!=null">
          			username=#{username},
          		</if>
-         		<if test="role!=null">
-         			role=#{role.status},
+         		<if test="role!=0">
+         			role=#{role},
          		</if>
          		   gmt_modified=now()
          	</set>
@@ -64,13 +64,28 @@
          		<if test="username!=null">
          			and username=#{username}
          		</if>
-         		<if test="role!=null">
-         			and role=#{role.status}
+         		<if test="roleEnum!=null">
+         			and role=#{roleEnum.status}
          		</if>
          	</where>
          </select>
          
-         
-         
-         
+         <select id="query" resultMap="RM-UserDO">
+         	select
+         	<include refid="select-param-column"/>
+         	from test_user
+         	<where>
+         	<if test="account!=null">
+         			account=#{account}
+         		</if>
+         		<if test="username!=null">
+         			and username=#{username}
+         		</if>
+         		<if test="roleEnum!=null">
+         			and role=#{roleEnum.status}
+         		</if>
+         </where>
+         		<include refid="page-limit"/>
+         </select>
+ 
 </mapper>

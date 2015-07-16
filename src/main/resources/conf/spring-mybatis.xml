@@ -49,7 +49,7 @@
           p:dataSource-ref="myDataSource"
           p:typeAliasesPackage="cn.xyz.entity"
           p:mapperLocations="classpath:mapper/*.xml"/>
-          <!--        p:configLocation="classpath:conf/mybatis-config.xml"  -->
+          
           <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
        
    <!-- spring与mybatis整合配置，扫描所有mapper -->

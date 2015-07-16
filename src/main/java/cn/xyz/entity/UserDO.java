@@ -4,7 +4,7 @@ public class UserDO extends BaseDO {
 	private String account;
 	private String username;
 	private String password;
-	private int role;//1为高级权限，2为低级权限
+	private int role=0;//1为高级权限，2为低级权限
 	
 	public String getAccount() {
 		return account;
