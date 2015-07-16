@@ -1,6 +1,8 @@
 package cn.xyz.common;
 
 import java.io.Serializable;
+
+import cn.xyz.common.enums.ErrorEnum;
 /**
  * 这是一个定义service层返回值类型的工具类
  * isSuccess为true，表示执行成功，成功的数据在model中，此时errorEnum没有意义

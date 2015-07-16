@@ -1,4 +1,4 @@
-package cn.xyz.common;
+package cn.xyz.common.enums;
 
 public enum RoleEnum {
 	BOSS(1,"老板"),

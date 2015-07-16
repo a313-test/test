@@ -3,7 +3,7 @@ package cn.xyz.service;
 import cn.xyz.common.MyServiceResult;
 import cn.xyz.common.Pagination;
 import cn.xyz.common.QueryUserCondition;
-import cn.xyz.common.RoleEnum;
+import cn.xyz.common.enums.RoleEnum;
 import cn.xyz.entity.UserDO;
 
 public interface IUserService {

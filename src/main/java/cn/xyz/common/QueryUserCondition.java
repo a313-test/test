@@ -1,5 +1,7 @@
 package cn.xyz.common;
 
+import cn.xyz.common.enums.RoleEnum;
+
 
 /**
  * @author xuyizhen

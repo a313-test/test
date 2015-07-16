@@ -13,9 +13,28 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
      
     <!-- 扫描controller（controller层注入） -->
-   <context:component-scan base-package="cn.springmvc.controller"/>
-    
-   <!-- 避免IE在ajax请求时，返回json出现下载 -->
+   <context:component-scan base-package="cn.xyz.controller"/>
+   
+    <!-- 对模型视图添加前后缀 -->
+     <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        	<property name="resourceLoaderPath" value="/WEB-INF/velo/"/>
+        	<property name="velocityProperties" >
+        		<props>
+        			<prop key="input.encoding">utf-8</prop>
+        			<prop key="output.encoding">utf-8</prop>
+        		</props>
+        	</property>
+     </bean>
+     
+     <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+ 		<property name="cache" value="true"/>
+ 		<property name="prefix" value=""/>
+ 		<property name="suffix" value=".vm"/>
+ 		<property name="contentType" value="test/html;charset=utf-8"/>    	
+     </bean>
+     
+     
+       <!-- 避免IE在ajax请求时，返回json出现下载 -->
    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">    
         <property name="supportedMediaTypes">
             <list>
@@ -23,8 +42,14 @@
             </list>
         </property>
     </bean>
-     
-   <!-- 对模型视图添加前后缀 -->
-     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-      p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
+    
+   <!--以自定义的方式加载指定的配置文件-->
+    <bean id="propertyConfigurer" class="cn.xyz.common.MyPropertyPlaceholderConfigurer">
+    	<property name="location">
+    		<value>classpath:conf/myprop.properties</value>
+    	</property>
+    </bean>
+     <!--用于在代码中获得myprop.properties中的属性值-->
+     <bean class="cn.xyz.common.MyPropertiesUtil"/>
+
 </beans>

@@ -11,6 +11,8 @@ import cn.xyz.dao.UserDAO;
 import cn.xyz.entity.UserDO;
 import cn.xyz.service.IUserService;
 import cn.xyz.common.*;
+import cn.xyz.common.enums.ErrorEnum;
+import cn.xyz.common.enums.RoleEnum;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {

@@ -1,4 +1,4 @@
-package cn.xyz.common;
+package cn.xyz.common.enums;
 
 public enum ErrorEnum {
 	PARAM_UNKONWN(0,"未知的错误"),

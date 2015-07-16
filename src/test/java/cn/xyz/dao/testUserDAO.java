@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import cn.xyz.common.MyServiceResult;
 import cn.xyz.common.Pagination;
 import cn.xyz.common.QueryUserCondition;
-import cn.xyz.common.RoleEnum;
+import cn.xyz.common.enums.RoleEnum;
 import cn.xyz.dao.UserDAO;
 import cn.xyz.entity.UserDO;
 import cn.xyz.service.IUserService;
