@@ -12,12 +12,15 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
      
+     <!--添加springMVC annotation--> 
+    <context:annotation-config/>
+     
     <!-- 扫描controller（controller层注入） -->
    <context:component-scan base-package="cn.xyz.controller"/>
    
-    <!-- 对模型视图添加前后缀 -->
+  
      <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-        	<property name="resourceLoaderPath" value="/WEB-INF/velo/"/>
+        	<property name="resourceLoaderPath" value="/WEB-INF/vm/"/>
         	<property name="velocityProperties" >
         		<props>
         			<prop key="input.encoding">utf-8</prop>
@@ -26,7 +29,8 @@
         	</property>
      </bean>
      
-     <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+       <!-- 对模型视图path resolve -->
+     <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
  		<property name="cache" value="true"/>
  		<property name="prefix" value=""/>
  		<property name="suffix" value=".vm"/>
@@ -34,7 +38,7 @@
      </bean>
      
      
-       <!-- 避免IE在ajax请求时，返回json出现下载 -->
+   <!-- 避免IE在ajax请求时，返回json出现下载 -->
    <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">    
         <property name="supportedMediaTypes">
             <list>
